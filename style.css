@@ -89,7 +89,7 @@ page.print-a4 {
 
 /* ===== DESCRIPTION ===== */
 .description-a5 {
-  padding: 1.2cm;
+  padding: 0 1.2cm;
 }
 
 .description-grid {
@@ -103,7 +103,7 @@ page.print-a4 {
 }
 
 .hint {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   font-size: 20px;
   font-weight: bold;
 }
