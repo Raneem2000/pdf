@@ -1,0 +1,123 @@
+/* ===== PAGE SYSTEM ===== */
+body {
+  background: #ccc;
+  margin: 0;
+}
+
+page.print-a4 {
+  width: 21cm;
+  height: 29.7cm;
+  background: white;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== A5 SECTIONS ===== */
+.label-a5,
+.description-a5 {
+  width: 100%;
+  height: 14.85cm; /* A5 height */
+  box-sizing: border-box;
+}
+
+/* ===== LABEL (ROTATED CONTENT) ===== */
+.label-a5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label-rotated {
+  width: 10.8cm;
+  height: 100%;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+/* ===== LABEL CONTENT ===== */
+.party-info {
+  margin-bottom: 2rem;
+  display: flex;
+    flex-direction: column;
+  gap: 6px;
+}
+
+.party-info h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.party-info p {
+  margin: 0;
+}
+.party-info span {
+  font-weight :bold ;
+}
+
+.label-meta {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.price-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 2rem 0;
+}
+
+.total {
+  font-weight: bold;
+}
+.qr-block {
+  width: 100%;
+}
+
+.date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px; /* optional spacing */
+  font-size: 14px;
+}
+
+.qr-block img {
+  width: 140px;
+}
+
+/* ===== DESCRIPTION ===== */
+.description-a5 {
+  padding: 1.2cm;
+}
+
+.description-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.description-item h3 {
+  margin: 0 0 4px;
+}
+
+.hint {
+  margin-top: 3rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ===== PRINT ===== */
+@media print {
+  body {
+    background: none;
+  }
+  page {
+    margin: 0;
+  }
+}
+@page {
+  size: A4;
+  margin: 0;
+}

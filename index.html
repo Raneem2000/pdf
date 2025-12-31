@@ -2,247 +2,103 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>اللصاقة A4</title>
-
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: #e5e5e5;
-      font-family: Arial, sans-serif;
-    }
-
-    .a4-page {
-      width: 210mm;
-      height: 297mm;
-      padding: 20mm;
-      margin: 10px auto;
-      background: white;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    /* ========== TOP SECTION (A5 LABEL ROTATED) ========== */
-    .top-section {
-      width: 140mm;
-      height: 100%;
-      position: relative;
-
-      transform: rotate(-90deg);
-      transform-origin: top left;
-
-      /* تعويض الإزاحة بعد الدوران */
-      margin-top: 140mm;
-      margin-right: 60mm;
-    }
-
-    /* ====== EXISTING STYLES (UNCHANGED) ====== */
-    .header-section {
-      margin-bottom: 2rem;
-    }
-
-    .header-section h2 {
-      font-size: 1.4rem;
-      margin: 0 0 6px;
-      font-weight: bold;
-    }
-
-    .header-section p {
-      font-size: 1.1rem;
-      margin: 0 0 6px;
-      color: #333;
-    }
-
-    .header-section .location {
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .weight-label {
-      text-align: left;
-      font-size: 1.2rem;
-      font-weight: 600;
-      padding: 8px 15px;
-    }
-
-    .AD {
-      text-align: left;
-      margin-left: 10rem;
-      font-size: 1.2rem;
-      font-weight: 400;
-      padding: 4px 15px;
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      /* gap: 8px 20px; */
-      margin-bottom: 25px;
-    }
-
-    .value {
-      min-height: 24px;
-    }
-
-    .total {
-      font-weight: bold;
-      padding-top: 8px;
-      padding-bottom: 8px;
-    }
-
-
-
-    .date-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 8px;
-      font-size: 1.2rem;
-    }
-
-    .s-label {
-      margin-left: 30px;
-    }
-
-
-    /* ========== BOTTOM SECTION (A5 DESCRIPTION) ========== */
-  .bottom-section {
-    position: absolute;
-    bottom: 20mm;
-    width: 100%;
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  .grid {
-    display: grid;
-    gap: 24px;
-  }
-
-  @media(min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  .col {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .condition-row h3 {
-    font-size: 20px;
-    font-weight: 800;
-    margin: 0 0 4px 0;
-    color: #000;
-  }
-
-  .condition-row p {
-    font-size: 18px;
-    margin: 0;
-    /* font-weight: 00; */
-    line-height: 1.5;
-    max-width: 70%;
-  }
-  .hint {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  </style>
+  <title>A4 Shipping Label</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="a4-page">
+<page class="print-a4">
 
-  <!-- ===== TOP A5 LABEL (ROTATED) ===== -->
-  <div class="top-section">
+  <!-- ===== TOP A5 : SHIPPING LABEL ===== -->
+  <section class="label-a5">
+    <div class="label-rotated">
 
-    <div class="header-section">
-      <h2>محمد أحمد علي</h2>
-      <p>صاحب الشقة ومالك العقار المباع بموجب هذا العقد</p>
-      <span class="location">القاهرة - مصر</span>
-    </div>
-
-    <div class="header-section">
-      <h2>محمد أحمد علي</h2>
-      <p>صاحب الشقة ومالك العقار المباع بموجب هذا العقد</p>
-      <span class="location">القاهرة - مصر</span>
-    </div>
-
-    <div class="weight-label">5 كغ</div>
-    <div class="AD">A : D</div>
-    <div class="AD">: B</div>
-
-    <div class="grid-container">
-      <div class="value">قيمة الشحنة</div>
-      <div class="value">300000</div>
-
-      <div class="value">عمولة التحصيل</div>
-      <div class="value">300000</div>
-
-      <div class="value">أجور الشحن</div>
-      <div class="value">300000</div>
-
-      <div class="value total">المجموع</div>
-      <div class="value total">300000</div>
-    </div>
-
-    <div class="qr-block" dir="ltr">
-      <img src="/QR.svg" alt="QR Code" class="grid-image">
-      <div class="date-row">
-        <span class="s-label">S</span>
-        <span class="date-value">01.06.2026</span>
+      <div class="party-info">
+        <h2>محمد أحمد علي</h2>
+        <p>شارع نادي الاتحاد - جانب مطبعة القيم</p>
+        <span>حلب - الأعظمية</span>
       </div>
+
+      <div class="party-info">
+        <h2>محمد أحمد علي</h2>
+        <p>شارع النصر - جانب مدرسة الفاروق</p>
+        <span>حلب - العزيزية</span>
+      </div>
+
+      <div class="label-meta">
+        <span></span>
+        <span>A : D</span>
+        <span>5 كغ</span>
+      </div>
+
+      <div class="price-table">
+        <div>قيمة الشحنة</div><div>300000</div>
+        <div>عمولة التحصيل</div><div>300000</div>
+        <div>أجور الشحن</div><div>300000</div>
+        <div class="total">المجموع</div><div class="total">300000</div>
+      </div>
+
+      <div class="qr-block" dir="ltr">
+        <img src="/QR.svg" alt="QR Code">
+        <div class="date-row">
+          <span>S</span>
+          <span>01.06.2026</span>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-  </div>
-  <!-- ===== BOTTOM A5 DESCRIPTION ===== -->
-<div class="bottom-section">
-        <h2>شروط التغليف</h2>
+  <!-- ===== BOTTOM A5 : DESCRIPTION ===== -->
+<section class="description-a5">
+  <h2>شروط التغليف</h2>
 
-  <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 24px;">
+  <div class="description-grid">
 
     <!-- First Column -->
-    <div class="col">
-      <div class="condition-row">
+    <div class="description-col">
+      <div class="description-item">
         <h3>وضع العنوان والبيانات</h3>
         <p>استخدام ملصق الشحن الرسمي من الشركة البريد.</p>
       </div>
-      <div class="condition-row">
+
+      <div class="description-item">
         <h3>التغليف الداخلي</h3>
         <p>تأمين المحتوى الداخلي باستخدام مواد مانعة للصدمات مثل الفقاعات الهوائية</p>
       </div>
-      <div class="condition-row">
+
+      <div class="description-item">
         <h3>سلامة التغليف الخارجي</h3>
         <p>يجب أن يكون التغليف الخارجي قويًا ومتينًا وخالٍ من التمزقات أو الثقوب أو التلف.</p>
       </div>
     </div>
 
     <!-- Second Column -->
-    <div class="col">
-      <div class="condition-row">
+    <div class="description-col">
+      <div class="description-item">
         <h3>ختم الطرد</h3>
         <p>يجب إغلاق الطرد بإحكام باستخدام شريط لاصق قوي ولا يُنصح باستخدام الحبال أو الأسلاك المكشوفة.</p>
       </div>
-      <div class="condition-row">
+
+      <div class="description-item">
         <h3>عدم استخدام مواد محظورة</h3>
         <p>المواد الكيميائية أو الأدوية بدون ترخيص، السوائل غير المصرح بها، المواد القابلة للاشتعال أو الانفجار.</p>
       </div>
-      <div class="condition-row">
+
+      <div class="description-item">
         <h3>تغليف خاص للمواد الحساسة أو القابلة للكسر</h3>
-        <p>استخدام عبارة Fragile على جميع الجهات، صناديق مخصصة ومحشوة جيداً، وضع علامة 'هذا الجانب للأعلى'.</p>
+        <p>استخدام عبارة Fragile على جميع الجهات، صناديق مخصصة ومحشوة جيداً، وضع علامة "هذا الجانب للأعلى".</p>
       </div>
     </div>
 
   </div>
-          <p class="hint">الشركة غير مسوؤلة عن الأضرار الناتجة عن سوء التغليف</p>
 
-</div>
-</div>
+  <p class="hint">الشركة غير مسوؤلة عن الأضرار الناتجة عن سوء التغليف</p>
+</section>
+
+
+</page>
+
 </body>
 </html>
